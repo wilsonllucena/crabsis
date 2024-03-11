@@ -4,7 +4,7 @@ import 'express-async-errors'
 
 import express from 'express'
 import bodyParser from 'body-parser'
-import { router } from './routes'
+import { router, routerAccount } from './routes'
 import env from '../config/env'
 import logger from './shared/lib/logger'
 import { errorHandlerMiddleware } from './middlewares/error'
@@ -22,12 +22,7 @@ router.post(
 )
 
 app.use(express.json())
-app.use(function (req, res, next) {
-  console.log('Time:', Date.now())
-  next()
-})
-// app.use(connectionMiddleware)
-
+app.use(routerAccount)
 app.use(router)
 app.use(errorHandlerMiddleware)
 
