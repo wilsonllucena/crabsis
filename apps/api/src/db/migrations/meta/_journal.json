@@ -15,6 +15,13 @@
       "when": 1710115265283,
       "tag": "0001_shocking_gideon",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710171995635,
+      "tag": "0002_polite_eternals",
+      "breakpoints": true
     }
   ]
 }
