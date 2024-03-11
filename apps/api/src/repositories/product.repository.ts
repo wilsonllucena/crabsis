@@ -55,7 +55,7 @@ export class ProductRepository {
     const { accountId } = data
     await this.getById(id, accountId)
 
-    const user = await this._db
+    const product = await this._db
       .update(products)
       .set({
         name: data.name,
@@ -63,7 +63,7 @@ export class ProductRepository {
         accountId: data.accountId,
         quantity: data.quantity,
       })
-      .where(and(eq(products.id, id), eq(products.accountId, accountId)))
-    return user
+      .where(and(eq(products.id, id), eq(products.accountId, accountId))).returning()
+    return product.shift()
   }
 }
