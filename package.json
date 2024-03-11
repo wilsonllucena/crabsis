@@ -1,0 +1,21 @@
+{
+  "name": "crabsis",
+  "version": "1.0.0",
+  "description": "Sistema para gestão de salão de beleza",
+  "main": "index.js",
+  "author": "Wilson Lima",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^8.1.2"
+  },
+  "scripts": {
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "start": "node /apps/api/dist/main"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

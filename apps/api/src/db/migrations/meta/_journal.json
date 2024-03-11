@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710115086617,
+      "tag": "0000_swift_talos",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710115265283,
+      "tag": "0001_shocking_gideon",
+      "breakpoints": true
+    }
+  ]
+}

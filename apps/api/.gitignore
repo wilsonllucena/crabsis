@@ -1,0 +1,15 @@
+.node_modules
+./node_modules
+node_modules
+.history
+*.logs
+.npm
+.eslintcache
+.build/release
+.dist
+./dist
+.env
+.nyc_output
+.vscode
+logs
+*.log

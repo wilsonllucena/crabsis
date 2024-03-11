@@ -1,0 +1,37 @@
+@baseurl = http://localhost:4242
+
+### GET Request
+GET {{baseurl}}/users
+
+### GET Request
+GET {{baseurl}}/user/zarvjxt8yb94nezgashyqy6k
+
+### POST Request
+POST {{baseurl}}/user
+Content-Type: application/json
+
+{
+  "name": "Janice Lopes",
+  "email": "janice@email.com"
+}
+
+### PUT Request
+PUT {{baseurl}}/user/1
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "email": "updatedemail@example.com"
+}
+
+### DELETE Request
+DELETE {{baseurl}}/user/1
+
+
+### STRIPE
+
+### POST Checkout
+POST {{baseurl}}/checkout
+Content-Type: application/json
+x-user-id : 3bcf2360-34e2-4763-bf86-63a0329a2675
+

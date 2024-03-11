@@ -1,0 +1,9 @@
+  API_KEY=
+  SECRET_KEY=
+  PORT="3333"
+  STRIPE_PUBLISH_KEY=
+  STRIPE_SECRET_KEY=
+  STRIPE_PRICE_ID=
+  STRIPE_WEBHOOK_SECRET=
+  CLIENT_URL="http://localhost:3000"
+  DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
