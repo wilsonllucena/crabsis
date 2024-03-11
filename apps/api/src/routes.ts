@@ -28,17 +28,19 @@ import {
 } from './controllers/client.controller'
 import { checkoutController } from './controllers/checkout.controller'
 import { createServiceController, deleteServiceController, getServiceController, listServiceController, updateServiceController } from './controllers/service.controller'
-import expressListRoutes from 'express-list-routes'
-import logger from './shared/lib/logger'
+import { validTenantMiddleware } from './middlewares/valid-tenant'
 
 const router = Router()
+const routerAccount = Router()
 
 // Routes for accounts
-router.get('/accounts', listAccountController)
-router.get('/account/:id', getAccountController)
-router.patch('/account/:id', getAccountController)
-router.delete('/account/:id', deleteAccountController)
-router.post('/account', createAccountController)
+routerAccount.get('/accounts', listAccountController)
+routerAccount.get('/account/:id', getAccountController)
+routerAccount.patch('/account/:id', getAccountController)
+routerAccount.delete('/account/:id', deleteAccountController)
+routerAccount.post('/account', createAccountController)
+
+router.use(validTenantMiddleware)
 
 // Routes for users
 router.get('/users', listUserController)
@@ -71,6 +73,5 @@ router.post('/service', createServiceController)
 // Routes for stripe
 router.post('/checkout', checkoutController)
 
-expressListRoutes(router);
 
-export { router }
+export { router, routerAccount };
