@@ -91,4 +91,14 @@ export class AccountRepository {
       .from(accounts)
       .where(eq(accounts.stripeCustomerId, stripeCustomerId))
   }
+
+
+  async getByIdOnly(id: string) {
+    const user = await this._db
+      .select({ id: accounts.id })
+      .from(accounts)
+      .where(eq(accounts.id, id))
+
+    return user
+  }
 }
