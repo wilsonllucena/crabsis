@@ -9,7 +9,6 @@ export const listClientService = async (accountId: string) => {
   return await clientRepository.list(accountId);
 };
 export const createClientService = async (input: Client) => {
-  try {
     const { accountId } = input;
 
     const userExists = await clientRepository.getByEmail(
@@ -30,10 +29,7 @@ export const createClientService = async (input: Client) => {
     });
 
     return user;
-  } catch (error: any) {
-    console.log(error.message);
-    return;
-  }
+  
 };
 
 export const updateClientService = async (
