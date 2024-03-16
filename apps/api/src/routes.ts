@@ -35,7 +35,7 @@ import {
   updateServiceController,
 } from "./controllers/service.controller";
 import { validTenantMiddleware } from "./middlewares/valid-tenant";
-import { errorHandlerMiddleware } from "./middlewares/error";
+import { createScheduleController, deleteScheduleController, getScheduleController, listScheduleController, updateScheduleController } from "./controllers/schedule.controller";
 const router = Router();
 const routerAccount = Router();
 
@@ -45,38 +45,37 @@ routerAccount.get("/account/:id", getAccountController);
 routerAccount.patch("/account/:id", getAccountController);
 routerAccount.delete("/account/:id", deleteAccountController);
 routerAccount.post("/account", createAccountController);
-
 router.use(validTenantMiddleware);
-// router.use(errorHandlerMiddleware);
 // Routes for users
 router.get("/users", listUserController);
 router.get("/user/:id", getUserController);
 router.patch("/user/:id", updateUserController);
 router.delete("/user/:id", deleteUserController);
 router.post("/user", createUserController);
-
+// Routes for schedules
+router.get("/schedules", listScheduleController)
+router.get("/schedule/:id", getScheduleController);
+router.patch("/schedule/:id", updateScheduleController);
+router.delete("/schedule/:id", deleteScheduleController);
+router.post("/schedule", createScheduleController)
 // Routes for clients
 router.get("/clients", listClientController);
 router.get("/client/:id", getClientController);
 router.patch("/client/:id", updateClientController);
 router.delete("/client/:id", deleteClientController);
 router.post("/client", createClientController);
-
 // Routes for products
 router.get("/products", listProductController);
 router.get("/product/:id", getProductController);
 router.patch("/product/:id", updateProductController);
 router.delete("/product/:id", deleteProductController);
 router.post("/product", createProductController);
-
 // Routes for services
 router.get("/services", listServiceController);
 router.get("/service/:id", getServiceController);
 router.patch("/service/:id", updateServiceController);
 router.delete("/service/:id", deleteServiceController);
 router.post("/service", createServiceController);
-
 // Routes for stripe
 router.post("/checkout", checkoutController);
-
 export { router, routerAccount };
